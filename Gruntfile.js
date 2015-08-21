@@ -9,11 +9,18 @@ module.exports = function(grunt) {
         jshintrc: true
       },
       files: 'Gruntfile.js'
+    },
+    pa11y: {
+      options: {
+        url: 'example.com',
+        standard: 'WCAG2AAA'
+      }
     }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-pa11y');
 
   // Default task.
   grunt.registerTask('default', ['jshint']);
